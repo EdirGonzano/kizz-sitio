@@ -1,0 +1,621 @@
+/* Kizz Web — tema "Warm Clinical": cálido, editorial, humano.
+   Sin fondos negros ni degradados neón: crema/blanco roto + salvia + rosa viejo/terracota,
+   serif editorial para títulos (Playfair Display) + sans humanista para cuerpo (Cabin). */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Cabin:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #faf5ef;
+  --bg-card: #fffdfa;
+  --ink: #3a352f;
+  --ink-soft: #756a5f;
+  --sage: #4b6358;
+  --sage-deep: #33463b;
+  --sage-tint: #e9efe9;
+  --rose: #c98a82;
+  --rose-tint: #f4e6e1;
+  --terracotta: #c97b5d;
+  --correct-bg: #dfeee2;
+  --correct-ink: #2f5c43;
+  --incorrect-bg: #f2ddd3;
+  --incorrect-ink: #8a4a34;
+  --card-radius: 18px;
+  --shadow-soft: 0 10px 30px -18px rgba(58, 53, 47, 0.25);
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Cabin", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* padding-top fijo (no en vw) para que el contenido nunca quede debajo del logo
+   fijo en la esquina, sin importar cuánto se achique la ventana */
+#app {
+  min-height: 100vh;
+  padding: 90px 4vw 6vw;
+}
+
+@media (max-width: 640px) {
+  #app {
+    padding-top: 68px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Canvas de la red de nodos con motivo de salud (cruces, gotas, píldoras)
+   que flotan y se conectan — solo activo en Home, ver js/nodos.js. Fijo
+   detrás del contenido, sobre el fondo cálido; no intercepta clics. */
+#fx {
+  position: fixed;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+}
+
+/* ---------- Home ---------- */
+
+.view-home {
+  background: radial-gradient(circle at top left, #f6ece2 0%, var(--bg) 55%);
+}
+
+.home-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 2vh auto 5vh;
+}
+
+.home-eyebrow {
+  color: var(--terracotta);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  margin: 0 0 0.6rem;
+}
+
+.home-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-style: italic;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  margin: 0 0 0.9rem;
+  color: var(--sage-deep);
+}
+
+.home-docente {
+  color: var(--sage-deep);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  margin: 0 0 1.2rem;
+}
+
+.home-subtitle {
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  margin: 0;
+}
+
+.unidad-group {
+  max-width: 1200px;
+  margin: 0 auto 4vh;
+}
+
+.unidad-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  color: var(--sage-deep);
+  border-left: 4px solid var(--rose);
+  padding-left: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.1rem;
+}
+
+.session-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(75, 99, 88, 0.18);
+  border-radius: var(--card-radius);
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--sage);
+}
+
+.session-card-num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--terracotta);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.session-card-tema {
+  color: var(--ink);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+/* Sesiones integradoras: mismo formato de tarjeta, fondo cálido distinto para ubicarlas de un vistazo */
+.session-card.is-integradora {
+  background: var(--rose-tint);
+  border-color: var(--rose);
+}
+
+/* Tarjeta de hito (TA1, TA2, PC2, Caso...): fija, no clicable, solo de referencia en el calendario */
+.hito-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  background: var(--terracotta);
+  color: #fffaf5;
+  border: 1.5px dashed rgba(255, 250, 245, 0.55);
+  border-radius: var(--card-radius);
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow-soft);
+  cursor: default;
+}
+
+.hito-codigo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.03em;
+}
+
+.hito-nombre {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.hito-detalle {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+
+/* ---------- Sesión ---------- */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px; /* zona táctil cómoda en celular */
+  padding: 0 0.75rem;
+  margin: 0 0 1vh -0.75rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.back-link:hover {
+  color: var(--sage-deep);
+}
+
+.sesion-panel {
+  max-width: 900px;
+  margin: 8vh auto 0;
+  text-align: center;
+}
+
+.sesion-eyebrow {
+  color: var(--terracotta);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+}
+
+.sesion-tema {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 3.8vw, 2.8rem);
+  margin: 0 0 4vh;
+  line-height: 1.25;
+  color: var(--sage-deep);
+}
+
+.sesion-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  justify-content: center;
+}
+
+.momento-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  padding: 1.4rem 2.4rem;
+  border-radius: 999px;
+  min-width: 270px;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.momento-btn:hover {
+  transform: translateY(-3px);
+}
+
+.momento-inicio {
+  background: var(--sage);
+  color: #fffdf9;
+}
+
+.momento-cierre {
+  background: var(--rose);
+  color: #3a2420;
+}
+
+.momento-icon {
+  font-size: 1.2em;
+}
+
+/* ---------- Quiz ---------- */
+
+.view-quiz {
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #f6e9e4 0%, var(--bg) 55%);
+}
+
+.quiz-panel {
+  max-width: 1100px;
+  margin: 2vh auto 0;
+  text-align: center;
+}
+
+.quiz-progreso {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--terracotta);
+  margin: 0 0 0.6rem;
+}
+
+.quiz-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 0 3vh;
+}
+
+.quiz-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(75, 99, 88, 0.25);
+}
+
+.quiz-dots span.is-active {
+  background: var(--sage);
+}
+
+.quiz-pregunta,
+.tile-texto {
+  white-space: pre-line; /* respeta los saltos de línea que se escriben en el enunciado y las alternativas */
+}
+
+/* Viñetas e imágenes dentro de las preguntas (ver fmt() en app.js) */
+.quiz-pregunta .vinetas,
+.tile-texto .vinetas {
+  text-align: left;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.4em auto;
+  padding-left: 1.3em;
+}
+
+.img-pregunta {
+  display: block;
+  max-width: 100%;
+  max-height: 38vh;
+  margin: 0.6em auto;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.tile-texto .img-pregunta {
+  max-height: 22vh;
+  margin: 0.3em 0;
+}
+
+.quiz-pregunta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+  line-height: 1.35;
+  margin: 0 0 4.5vh;
+  color: var(--ink);
+}
+
+/* Grilla de tarjetas giratorias */
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3rem;
+  margin-bottom: 3.5vh;
+  perspective: 1600px;
+}
+
+@media (max-width: 720px) {
+  .answer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flip-card {
+  position: relative;
+  min-height: 130px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 130px;
+  text-align: left;
+  transition: transform 0.5s cubic-bezier(0.45, 0.05, 0.15, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--card-radius);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.3rem 1.5rem;
+  cursor: pointer;
+}
+
+.flip-card-front {
+  background: var(--bg-card);
+  border: 1.5px solid var(--sage);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.flip-card:not(.is-flipped):hover .flip-card-front {
+  transform: translateY(-3px);
+  border-color: var(--terracotta);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid transparent;
+}
+
+.flip-card-back.is-correct {
+  background: var(--correct-bg);
+  color: var(--correct-ink);
+}
+
+.flip-card-back.is-incorrect {
+  background: var(--incorrect-bg);
+  color: var(--incorrect-ink);
+}
+
+.tile-letra {
+  flex: none;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--sage-tint);
+  color: var(--sage-deep);
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.tile-texto {
+  font-size: clamp(1rem, 1.7vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.tile-texto .katex {
+  font-size: 1.15em;
+}
+
+.result-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+}
+
+.result-icon {
+  font-size: 1.3em;
+}
+
+.quiz-siguiente-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 4.5rem;
+}
+
+.siguiente-btn,
+.anterior-btn {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.02rem, 1.8vw, 1.25rem);
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.siguiente-btn {
+  border: none;
+  background: var(--sage-deep);
+  color: #fffdf9;
+  box-shadow: var(--shadow-soft);
+}
+
+.siguiente-btn:hover {
+  transform: translateY(-3px);
+}
+
+.anterior-btn {
+  border: 1.5px solid var(--sage);
+  background: transparent;
+  color: var(--sage-deep);
+}
+
+.anterior-btn:hover {
+  transform: translateY(-3px);
+  background: var(--sage-tint);
+}
+
+/* ---------- Confeti (celebración al acertar) ---------- */
+
+.confetti-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 5;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 8px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0.95;
+  animation: confetti-burst 0.9s ease-out forwards;
+}
+
+@keyframes confetti-burst {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(0.7);
+    opacity: 0;
+  }
+}
+
+/* ---------- Logo UTP + botón de pantalla completa (fijos, en todas las pantallas) ---------- */
+
+#brand-logo {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  height: 34px;
+  background: #fffdfa;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-soft);
+  z-index: 60;
+}
+
+@media (max-width: 640px) {
+  #brand-logo {
+    height: 24px;
+    padding: 6px 9px;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+#btn-fullscreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 60;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--sage);
+  background: var(--bg-card);
+  color: var(--sage-deep);
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+#btn-fullscreen:hover {
+  transform: translateY(-2px);
+  background: var(--sage-tint);
+}
+
+/* ---------- Cursores personalizados ---------- */
+/* Tamaño estándar/profesional (26x26, el mismo para ambos) para que no estorben
+   al clickear ni tapen la vista. Por defecto: la jeringa elegida por el usuario
+   (imagen/cursor-jeringa-26.png, ya reducida). Sobre elementos clicables: una
+   carita asustada (guiño al tema de salud). */
+
+html {
+  cursor: url("../imagen/cursor-jeringa-26.png") 2 24, auto;
+}
+
+a,
+button,
+.flip-card,
+.session-card,
+.momento-btn,
+#btn-fullscreen {
+  cursor:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 34 34'><circle cx='17' cy='17' r='14' fill='%23fffdfa' stroke='%233a352f' stroke-width='1.6'/><circle cx='11.5' cy='14' r='3.4' fill='%23fffdfa' stroke='%233a352f' stroke-width='1.4'/><circle cx='22.5' cy='14' r='3.4' fill='%23fffdfa' stroke='%233a352f' stroke-width='1.4'/><circle cx='11.5' cy='14' r='1.4' fill='%233a352f'/><circle cx='22.5' cy='14' r='1.4' fill='%233a352f'/><ellipse cx='17' cy='23.5' rx='3.2' ry='4' fill='%233a352f'/><circle cx='6.5' cy='19' r='2' fill='%23c98a82' opacity='0.65'/><circle cx='27.5' cy='19' r='2' fill='%23c98a82' opacity='0.65'/></svg>")
+      13 13,
+    pointer;
+}
