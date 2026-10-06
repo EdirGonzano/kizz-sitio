@@ -2327,6 +2327,13 @@ const SESSIONS = [
         "posicion": "final"
       }
     ]
+  },
+  {
+    "numero": 34,
+    "unidad": 5,
+    "tema": "Caso integrador: repaso",
+    "inicio": [],
+    "cierre": []
   }
 ];
 
@@ -2351,9 +2358,9 @@ const HITOS = {
     "nombre": "Práctica Calificada 2",
     "detalle": "Sesión 26 · Individual"
   },
-  "33": {
+  "34": {
     "codigo": "CASO",
-    "nombre": "Caso integrador",
-    "detalle": "Sesiones 34-35 · Grupal"
+    "nombre": "Caso final",
+    "detalle": "Sesión 35 · Grupal"
   }
 };

@@ -635,6 +635,16 @@ const SESSIONS = [
         "correcta": 1
       },
       {
+        "pregunta": "En la elipse \\( \\dfrac{x^2}{16}+\\dfrac{y^2}{9}=1 \\), la longitud del eje mayor es:",
+        "alternativas": [
+          "8",
+          "4",
+          "6",
+          "16"
+        ],
+        "correcta": 0
+      },
+      {
         "pregunta": "Hoy aprendimos sobre:",
         "alternativas": [
           "Elipse: ecuación ordinaria, canónica y general",
@@ -881,86 +891,6 @@ const SESSIONS = [
           "Iniciamos el tema de matrices",
           "Rendimos el Examen Parcial",
           "Repasamos funciones para el Examen Final"
-        ],
-        "correcta": 0,
-        "posicion": "final"
-      }
-    ]
-  },
-  {
-    "numero": 12,
-    "unidad": 1,
-    "tema": "Práctica Calificada 1",
-    "inicio": [
-      {
-        "pregunta": "Repaso sesión anterior — La sesión integradora previa a la Práctica Calificada 1 sirvió para repasar principalmente:",
-        "alternativas": [
-          "Rectas y las cuatro secciones cónicas",
-          "Matrices y determinantes",
-          "Funciones",
-          "Sistemas de ecuaciones"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — Antes de identificar el centro de una cónica en forma general, el primer paso es:",
-        "alternativas": [
-          "Completar cuadrados",
-          "Calcular un determinante",
-          "Graficar sin operar",
-          "Aplicar Gauss-Jordan"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — En \\( (x+1)^2+(y-4)^2=49 \\), ¿cuáles son el centro y el radio?",
-        "alternativas": [
-          "Centro (-1,4), radio 7",
-          "Centro (1,-4), radio 7",
-          "Centro (-1,4), radio 49",
-          "Centro (-1,-4), radio 7"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — En \\( \\dfrac{(x-2)^2}{36}+\\dfrac{(y+1)^2}{4}=1 \\), el valor de \\( a \\) es:",
-        "alternativas": [
-          "6",
-          "4",
-          "2",
-          "36"
-        ],
-        "correcta": 0
-      }
-    ],
-    "cierre": [
-      {
-        "pregunta": "Al resolver un ejercicio de cónicas, el primer paso ante una ecuación en forma general suele ser:",
-        "alternativas": [
-          "Graficar sin operar",
-          "Ordenar términos y completar cuadrados",
-          "Calcular un determinante",
-          "Aplicar Gauss-Jordan"
-        ],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Qué unidad del curso se abre después de la Práctica Calificada 1?",
-        "alternativas": [
-          "Funciones",
-          "Matrices",
-          "Sistema de ecuaciones",
-          "Secciones cónicas"
-        ],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Qué hicimos hoy en la sesión?",
-        "alternativas": [
-          "Rendimos la Práctica Calificada 1 (rectas y cónicas)",
-          "Rendimos la Práctica Calificada 2",
-          "Iniciamos el tema de sistemas de ecuaciones",
-          "Rendimos el Examen Final"
         ],
         "correcta": 0,
         "posicion": "final"
@@ -1528,86 +1458,6 @@ const SESSIONS = [
     ]
   },
   {
-    "numero": 20,
-    "unidad": 2,
-    "tema": "Examen Parcial",
-    "inicio": [
-      {
-        "pregunta": "Repaso sesión anterior — La sesión integradora previa al examen parcial repasó principalmente:",
-        "alternativas": [
-          "Rectas/cónicas y matrices",
-          "Solo funciones",
-          "Solo sistemas de ecuaciones",
-          "Solo determinantes"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — Antes de aplicar la matriz inversa a un sistema, conviene verificar primero:",
-        "alternativas": [
-          "Que el determinante de la matriz sea distinto de cero",
-          "Que la matriz sea simétrica",
-          "Que tenga más de 3 filas",
-          "Que sea diagonal"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — Si \\( \\det(A)=0 \\) para la matriz de coeficientes de un sistema \\( AX=B \\), el método de la matriz inversa:",
-        "alternativas": [
-          "No se puede aplicar",
-          "Da una solución única",
-          "Funciona igual",
-          "Se simplifica"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — El producto \\( AB \\) está definido cuando el número de columnas de A coincide con el número de:",
-        "alternativas": [
-          "Filas de B",
-          "Columnas de B",
-          "Filas de A",
-          "Elementos de B"
-        ],
-        "correcta": 0
-      }
-    ],
-    "cierre": [
-      {
-        "pregunta": "Después del examen parcial, ¿qué unidad se inicia en el curso?",
-        "alternativas": [
-          "Funciones",
-          "Sistema de ecuaciones",
-          "Secciones cónicas",
-          "Matrices"
-        ],
-        "correcta": 1
-      },
-      {
-        "pregunta": "Un repaso clave para la siguiente unidad (sistemas de ecuaciones) es dominar:",
-        "alternativas": [
-          "Solo el plano cartesiano",
-          "Operaciones con matrices y determinantes",
-          "Solo la ecuación de la recta",
-          "Las asíntotas de la hipérbola"
-        ],
-        "correcta": 1
-      },
-      {
-        "pregunta": "¿Qué hicimos hoy en la sesión?",
-        "alternativas": [
-          "Rendimos el Examen Parcial (rectas, cónicas y matrices)",
-          "Rendimos la Práctica Calificada 2",
-          "Iniciamos el tema de funciones",
-          "Repasamos sistemas de ecuaciones"
-        ],
-        "correcta": 0,
-        "posicion": "final"
-      }
-    ]
-  },
-  {
     "numero": 21,
     "unidad": 3,
     "tema": "Ecuación lineal y tipos de solución",
@@ -2168,86 +2018,6 @@ const SESSIONS = [
     ]
   },
   {
-    "numero": 28,
-    "unidad": 3,
-    "tema": "Práctica Calificada 2",
-    "inicio": [
-      {
-        "pregunta": "Repaso sesión anterior — La sesión integradora previa a la Práctica Calificada 2 repasó los métodos de:",
-        "alternativas": [
-          "Matriz inversa, Cramer y Gauss-Jordan",
-          "Solo completación de cuadrados",
-          "Solo graficación de rectas",
-          "Solo determinantes de orden 2"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — Para elegir el método más eficiente al resolver un sistema, conviene considerar:",
-        "alternativas": [
-          "El tamaño del sistema y si se pide una variable o todas",
-          "El color de los coeficientes",
-          "Si las variables son mayúsculas",
-          "Nada en particular"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — Si \\( \\Delta=0 \\) en la regla de Cramer, lo correcto es:",
-        "alternativas": [
-          "Concluir que no es compatible determinado y analizar con Gauss-Jordan",
-          "Aplicar Cramer igual, el resultado es válido",
-          "Asumir que el sistema tiene solución única",
-          "Asumir que el sistema es incompatible siempre"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso sesión anterior — Frente a Cramer, la ventaja de Gauss-Jordan es que también permite:",
-        "alternativas": [
-          "Identificar sistemas indeterminados e incompatibles con claridad",
-          "Evitar el uso de matrices",
-          "Resolver ecuaciones cuadráticas",
-          "Calcular solo determinantes"
-        ],
-        "correcta": 0
-      }
-    ],
-    "cierre": [
-      {
-        "pregunta": "Después de esta evaluación, la siguiente unidad del curso trata sobre:",
-        "alternativas": [
-          "Matrices",
-          "Funciones",
-          "Rectas",
-          "Determinantes"
-        ],
-        "correcta": 1
-      },
-      {
-        "pregunta": "Un concepto que conecta sistemas de ecuaciones con la siguiente unidad es:",
-        "alternativas": [
-          "La relación entre pares ordenados y correspondencias",
-          "Las asíntotas",
-          "El método de cofactores",
-          "La distancia entre rectas"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "¿Qué hicimos hoy en la sesión?",
-        "alternativas": [
-          "Rendimos la Práctica Calificada 2 (sistemas de ecuaciones)",
-          "Rendimos el Examen Parcial",
-          "Iniciamos el tema de rectas",
-          "Repasamos funciones para el Examen Final"
-        ],
-        "correcta": 0,
-        "posicion": "final"
-      }
-    ]
-  },
-  {
     "numero": 29,
     "unidad": 4,
     "tema": "Par ordenado, relación y función",
@@ -2734,5 +2504,20 @@ const HITOS = {
     "codigo": "EXFN",
     "nombre": "Examen Final",
     "detalle": "Semana 18 · Individual"
+  },
+  "11": {
+    "codigo": "PC1",
+    "nombre": "Práctica Calificada 1",
+    "detalle": "Sesión 12 · Individual"
+  },
+  "19": {
+    "codigo": "EXPA",
+    "nombre": "Examen Parcial",
+    "detalle": "Sesión 20 · Individual"
+  },
+  "27": {
+    "codigo": "PC2",
+    "nombre": "Práctica Calificada 2",
+    "detalle": "Sesión 28 · Individual"
   }
 };

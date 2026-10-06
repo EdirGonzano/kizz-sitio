@@ -1,7 +1,7 @@
 // Generado por construir.mjs. No editar: cambia curso.json.
 const CURSO = {
   "slug": "matematica-ccss",
-  "version": "musvb49q",
+  "version": "muwdlobj",
   "eyebrow": "Matemática para la CCSS",
   "docente": "Docente Edir Gonzano",
   "porMomento": {

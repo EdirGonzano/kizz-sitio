@@ -1,7 +1,7 @@
 // Generado por construir.mjs. No editar: cambia curso.json.
 const CURSO = {
   "slug": "matematica-2",
-  "version": "musvb3s4",
+  "version": "muwdlnv4",
   "eyebrow": "Matemática II · Ingeniería",
   "docente": "Docente Edir Gonzano",
   "porMomento": {

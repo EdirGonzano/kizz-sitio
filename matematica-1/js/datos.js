@@ -84,6 +84,36 @@ const SESSIONS = [
         ],
         "correcta": 0,
         "posicion": "final"
+      },
+      {
+        "pregunta": "Dos términos algebraicos son semejantes cuando:",
+        "alternativas": [
+          "Tienen el mismo coeficiente numérico",
+          "Tienen el mismo signo",
+          "Tienen la misma parte literal: las mismas variables con los mismos exponentes",
+          "Tienen el mismo número de variables, aunque los exponentes sean distintos"
+        ],
+        "correcta": 2
+      },
+      {
+        "pregunta": "¿Cuál de las siguientes parejas está formada por términos semejantes?",
+        "alternativas": [
+          "\\( 3x^2y \\) y \\( 3xy^2 \\)",
+          "\\( 3x^2y \\) y \\( -5x^2y \\)",
+          "\\( 4x \\) y \\( 4x^2 \\)",
+          "\\( 2xy \\) y \\( 2x \\)"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "En el término \\( -7x^3y^2 \\), el coeficiente numérico y la parte literal son, respectivamente:",
+        "alternativas": [
+          "\\( -7 \\) y \\( x^3y^2 \\)",
+          "\\( 7 \\) y \\( x^3y^2 \\)",
+          "\\( x^3y^2 \\) y \\( -7 \\)",
+          "\\( -7x^3 \\) y \\( y^2 \\)"
+        ],
+        "correcta": 0
       }
     ]
   },
@@ -164,6 +194,36 @@ const SESSIONS = [
         ],
         "correcta": 0,
         "posicion": "final"
+      },
+      {
+        "pregunta": "Para \\( a\\neq 0 \\) y \\( n \\) positivo, un exponente negativo significa que:",
+        "alternativas": [
+          "\\( a^{-n}=-a^{n} \\)",
+          "\\( a^{-n}=a^{1/n} \\)",
+          "\\( a^{-n}=0 \\)",
+          "\\( a^{-n}=\\dfrac{1}{a^{n}} \\)"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "Al multiplicar potencias de la misma base, \\( x^{m}\\cdot x^{n} \\), se obtiene:",
+        "alternativas": [
+          "\\( x^{m+n} \\)",
+          "\\( x^{mn} \\)",
+          "\\( x^{m-n} \\)",
+          "\\( x^{m}+x^{n} \\)"
+        ],
+        "correcta": 0
+      },
+      {
+        "pregunta": "La propiedad de la potencia de una potencia indica que \\( (x^{m})^{n} \\) es igual a:",
+        "alternativas": [
+          "\\( x^{m+n} \\)",
+          "\\( x^{m^{n}} \\)",
+          "\\( x^{mn} \\)",
+          "\\( n\\,x^{m} \\)"
+        ],
+        "correcta": 2
       }
     ]
   },
@@ -244,6 +304,36 @@ const SESSIONS = [
         ],
         "correcta": 0,
         "posicion": "final"
+      },
+      {
+        "pregunta": "Una raíz puede escribirse como potencia de exponente fraccionario. Para \\( a>0 \\), \\( \\sqrt[n]{a^{m}} \\) es igual a:",
+        "alternativas": [
+          "\\( a^{n/m} \\)",
+          "\\( a^{m/n} \\)",
+          "\\( a^{mn} \\)",
+          "\\( a^{m-n} \\)"
+        ],
+        "correcta": 1
+      },
+      {
+        "pregunta": "Para \\( a,b\\geq 0 \\), la raíz cuadrada de un producto, \\( \\sqrt{a\\cdot b} \\), es igual a:",
+        "alternativas": [
+          "\\( \\sqrt{a}+\\sqrt{b} \\)",
+          "\\( a\\sqrt{b} \\)",
+          "\\( \\sqrt{a}-\\sqrt{b} \\)",
+          "\\( \\sqrt{a}\\cdot\\sqrt{b} \\)"
+        ],
+        "correcta": 3
+      },
+      {
+        "pregunta": "En los números reales, la expresión \\( \\sqrt{-9} \\):",
+        "alternativas": [
+          "No existe, porque ningún número real elevado al cuadrado da un resultado negativo",
+          "Es igual a \\( 3 \\), porque \\( 3^{2}=9 \\)",
+          "Es igual a \\( -3 \\), porque \\( (-3)^{2}=9 \\)",
+          "Es igual a \\( 0 \\)"
+        ],
+        "correcta": 0
       }
     ]
   },
@@ -888,86 +978,6 @@ const SESSIONS = [
     ]
   },
   {
-    "numero": 12,
-    "unidad": 1,
-    "tema": "Práctica Calificada 1",
-    "inicio": [
-      {
-        "pregunta": "Repaso de la sesión integradora anterior: factorizar \\( x^2-4x+4 \\) da como resultado:",
-        "alternativas": [
-          "\\( (x-2)^2 \\)",
-          "\\( (x+2)^2 \\)",
-          "\\( (x-4)(x+1) \\)",
-          "\\( (x-2)(x+2) \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso: de los temas de la unidad 1, ¿cuál corresponde a dividir un polinomio entre \\( x-a \\)?",
-        "alternativas": [
-          "Método de Ruffini",
-          "Aspa simple",
-          "Producto notable",
-          "Fracción algebraica"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Para pensar un poco más: si \\( x^2-5x+6=0 \\), el valor de \\( x_1+x_2 \\) (suma de las soluciones) es:",
-        "alternativas": [
-          "\\( 5 \\)",
-          "\\( 6 \\)",
-          "\\( -5 \\)",
-          "\\( 1 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Al reducir \\( (x+5)(x-5)-(x^2-20) \\) se obtiene:",
-        "alternativas": [
-          "-5",
-          "5",
-          "-45",
-          "45"
-        ],
-        "correcta": 0
-      }
-    ],
-    "cierre": [
-      {
-        "pregunta": "Factorizar \\( x^2+2x-15 \\) da como resultado:",
-        "alternativas": [
-          "\\( (x+5)(x-3) \\)",
-          "\\( (x-5)(x+3) \\)",
-          "\\( (x+15)(x-1) \\)",
-          "\\( (x-5)(x-3) \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Simplificar \\( \\dfrac{x^2-25}{x+5} \\) da como resultado:",
-        "alternativas": [
-          "\\( x-5 \\)",
-          "\\( x+5 \\)",
-          "\\( x^2-5 \\)",
-          "\\( 5-x \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "¿Qué hicimos hoy en la sesión?",
-        "alternativas": [
-          "Rendimos la Práctica Calificada 1 (Unidad 1)",
-          "Rendimos la Práctica Calificada 2",
-          "Iniciamos la Unidad 3 (inecuaciones)",
-          "Rendimos el Examen Final"
-        ],
-        "correcta": 0,
-        "posicion": "final"
-      }
-    ]
-  },
-  {
     "numero": 13,
     "unidad": 2,
     "tema": "Ecuaciones lineales: tipos de solución",
@@ -1528,86 +1538,6 @@ const SESSIONS = [
     ]
   },
   {
-    "numero": 20,
-    "unidad": 2,
-    "tema": "Examen Parcial",
-    "inicio": [
-      {
-        "pregunta": "Repaso de la sesión integradora anterior: esta repasó principalmente:",
-        "alternativas": [
-          "Ecuaciones lineales, cuadráticas y con valor absoluto",
-          "Inecuaciones",
-          "Trigonometría",
-          "Factorización"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso: al resolver \\( x^2-4x=0 \\) se obtiene:",
-        "alternativas": [
-          "\\( x=0 \\) y \\( x=4 \\)",
-          "Solo \\( x=4 \\)",
-          "\\( x=-4 \\) y \\( x=0 \\)",
-          "\\( x=2 \\) y \\( x=-2 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Para pensar un poco más: al resolver \\( x^2-3x-10=0 \\), la diferencia entre la solución mayor y la menor es:",
-        "alternativas": [
-          "\\( 7 \\)",
-          "\\( 3 \\)",
-          "\\( 10 \\)",
-          "\\( 5 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Al resolver \\( 2(x-1)=3x+4 \\), el valor de \\( x \\) es:",
-        "alternativas": [
-          "-6",
-          "6",
-          "-2",
-          "2"
-        ],
-        "correcta": 0
-      }
-    ],
-    "cierre": [
-      {
-        "pregunta": "La solución de \\( |2x-4|=6 \\) incluye el valor:",
-        "alternativas": [
-          "\\( x=5 \\)",
-          "\\( x=-5 \\)",
-          "\\( x=3 \\)",
-          "\\( x=6 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Al resolver la ecuación lineal \\( 5x-3=2x+9 \\), el valor de \\( x \\) es:",
-        "alternativas": [
-          "\\( 4 \\)",
-          "\\( 3 \\)",
-          "\\( 6 \\)",
-          "\\( 2 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "¿Qué hicimos hoy en la sesión?",
-        "alternativas": [
-          "Rendimos el Examen Parcial (Unidades 1 y 2)",
-          "Rendimos la Práctica Calificada 2",
-          "Iniciamos la Unidad 4 (plano cartesiano)",
-          "Repasamos la Unidad 3 (inecuaciones)"
-        ],
-        "correcta": 0,
-        "posicion": "final"
-      }
-    ]
-  },
-  {
     "numero": 21,
     "unidad": 3,
     "tema": "Inecuaciones lineales y sus aplicaciones",
@@ -2001,86 +1931,6 @@ const SESSIONS = [
           "Repasamos la Unidad 2 para el Examen Parcial",
           "Iniciamos la Unidad 4 (plano cartesiano)",
           "Rendimos el Examen Final"
-        ],
-        "correcta": 0,
-        "posicion": "final"
-      }
-    ]
-  },
-  {
-    "numero": 26,
-    "unidad": 3,
-    "tema": "Práctica Calificada 2",
-    "inicio": [
-      {
-        "pregunta": "Repaso de la sesión integradora anterior: esta repasó principalmente:",
-        "alternativas": [
-          "Inecuaciones lineales, cuadráticas y con valor absoluto",
-          "Ecuaciones",
-          "Trigonometría",
-          "Fundamentos de álgebra"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Repaso: la solución de \\( x^2-4>0 \\) es:",
-        "alternativas": [
-          "\\( x<-2 \\) o \\( x>2 \\)",
-          "\\( -2<x<2 \\)",
-          "\\( x>2 \\) únicamente",
-          "\\( x<-2 \\) únicamente"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "Para pensar un poco más: la solución de \\( x^2-2x-3\\leq0 \\) es:",
-        "alternativas": [
-          "\\( -1\\leq x\\leq3 \\)",
-          "\\( x\\leq-1 \\) o \\( x\\geq3 \\)",
-          "\\( -3\\leq x\\leq1 \\)",
-          "\\( x\\leq3 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "La solución de \\( 4-x>1 \\) es:",
-        "alternativas": [
-          "\\( x<3 \\)",
-          "\\( x>3 \\)",
-          "\\( x<5 \\)",
-          "\\( x>5 \\)"
-        ],
-        "correcta": 0
-      }
-    ],
-    "cierre": [
-      {
-        "pregunta": "La solución de \\( x^2-16\\leq0 \\) es:",
-        "alternativas": [
-          "\\( -4\\leq x\\leq4 \\)",
-          "\\( x\\leq-4 \\) o \\( x\\geq4 \\)",
-          "\\( x\\leq4 \\)",
-          "\\( x\\geq-4 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "La solución de \\( |x-5|\\leq2 \\) es:",
-        "alternativas": [
-          "\\( 3\\leq x\\leq7 \\)",
-          "\\( x\\leq3 \\) o \\( x\\geq7 \\)",
-          "\\( -3\\leq x\\leq3 \\)",
-          "\\( x\\leq7 \\)"
-        ],
-        "correcta": 0
-      },
-      {
-        "pregunta": "¿Qué hicimos hoy en la sesión?",
-        "alternativas": [
-          "Rendimos la Práctica Calificada 2 (Unidad 3)",
-          "Rendimos el Examen Parcial",
-          "Iniciamos la Unidad 2 (ecuaciones)",
-          "Repasamos la Unidad 4 para el Examen Final"
         ],
         "correcta": 0,
         "posicion": "final"
@@ -2730,9 +2580,24 @@ const SESSIONS = [
 ];
 
 const HITOS = {
-  "35": {
+  "34": {
     "codigo": "EXFN",
     "nombre": "Examen Final",
     "detalle": "Semana 18 · Individual"
+  },
+  "11": {
+    "codigo": "PC1",
+    "nombre": "Práctica Calificada 1",
+    "detalle": "Sesión 12 · Individual"
+  },
+  "19": {
+    "codigo": "EXPA",
+    "nombre": "Examen Parcial",
+    "detalle": "Sesión 20 · Individual"
+  },
+  "25": {
+    "codigo": "PC2",
+    "nombre": "Práctica Calificada 2",
+    "detalle": "Sesión 26 · Individual"
   }
 };

@@ -192,7 +192,7 @@ function findSesion(numero) {
 // Las sesiones integradoras y las de evaluación (PC, exámenes) se marcan con un
 // borde distinto en la grilla para que se ubiquen de un vistazo al proyectar.
 function esIntegradora(tema) {
-  return /integradora/i.test(tema);
+  return /integrador/i.test(tema); // «integradora» y «Caso integrador»
 }
 
 function esEvaluacion(tema) {
@@ -297,6 +297,13 @@ function renderSesion(sesion) {
   `;
 }
 
+// Iconos de los botones de navegación (se muestran solo en celular; dibujados para que queden exactamente centrados)
+const svgNav = (trazo) =>
+  `<svg class="nav-icono" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="${trazo}"/></svg>`;
+const ICONO_ATRAS = svgNav("M19 12H5M11 6l-6 6 6 6");
+const ICONO_ADELANTE = svgNav("M5 12h14M13 6l6 6-6 6");
+const ICONO_LISTO = svgNav("M5 12.5l4.5 4.5L19 7");
+
 function renderQuiz(sesion, momento, preguntaIndexPedido) {
   const preguntas = obtenerRonda(sesion, momento);
   if (!preguntas.length) {
@@ -347,8 +354,8 @@ function renderQuiz(sesion, momento, preguntaIndexPedido) {
       <h1 class="quiz-pregunta">${fmt(pregunta.pregunta)}</h1>
       <div class="answer-grid">${tiles}</div>
       <div class="quiz-siguiente-wrap">
-        ${esPrimera ? "" : `<a class="anterior-btn" href="${base}/${index}">← Pregunta anterior</a>`}
-        <a class="siguiente-btn" id="btn-siguiente" href="${esUltima ? `#/sesion/${sesion.numero}` : `${base}/${index + 2}`}">${esUltima ? "Volver a la sesión →" : "Siguiente pregunta →"}</a>
+        ${esPrimera ? `<span class="anterior-btn is-vacio" aria-hidden="true"></span>` : `<a class="anterior-btn" href="${base}/${index}" aria-label="Pregunta anterior" title="Pregunta anterior"><span class="nav-flecha">←</span>${ICONO_ATRAS}<span class="nav-texto"> Pregunta anterior</span></a>`}
+        <a class="siguiente-btn${esUltima ? " es-ultima" : ""}" id="btn-siguiente" href="${esUltima ? `#/sesion/${sesion.numero}` : `${base}/${index + 2}`}" aria-label="${esUltima ? "Volver a la sesión" : "Siguiente pregunta"}" title="${esUltima ? "Volver a la sesión" : "Siguiente pregunta"}"><span class="nav-texto">${esUltima ? "Volver a la sesión" : "Siguiente pregunta"} </span><span class="nav-flecha">→</span>${esUltima ? ICONO_LISTO : ICONO_ADELANTE}</a>
       </div>
     </div>
   `;

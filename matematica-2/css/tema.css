@@ -570,7 +570,7 @@ button {
   }
 }
 
-/* ---------- Logo UTP + botón de pantalla completa (fijos, en todas las pantallas) ---------- */
+/* ---------- Botón de pantalla completa (fijo, en todas las pantallas) ---------- */
 
 #brand-logo {
   position: fixed;
@@ -639,4 +639,174 @@ button,
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 34 34'><circle cx='17' cy='17' r='15' fill='%231b212a' stroke='%23f2a53a' stroke-width='1.6'/><line x1='10' y1='24' x2='24' y2='10' stroke='%23f2a53a' stroke-width='2.8' stroke-linecap='round'/><circle cx='9' cy='25' r='3.8' fill='none' stroke='%23f2a53a' stroke-width='2.6'/><circle cx='25' cy='9' r='3.8' fill='none' stroke='%23f2a53a' stroke-width='2.6'/></svg>")
       13 13,
     pointer;
+}
+
+/* Piezas de los botones de navegación (en escritorio se ven igual que antes: solo texto y flecha) */
+.anterior-btn.is-vacio,
+.nav-icono {
+  display: none;
+}
+
+/* ================================================================
+   Celular (pantallas de hasta 720 px de ancho): compacto y sin desbordes.
+   Solo se activa en pantallas angostas: el escritorio no cambia.
+   ================================================================ */
+@media (max-width: 720px) {
+  /* Nada puede producir desplazamiento horizontal */
+  #app {
+    overflow-x: clip;
+  }
+
+  /* Encabezado de la pregunta: alineado a la izquierda y un poco más pequeño */
+  .quiz-panel {
+    text-align: left;
+  }
+
+  .quiz-dots {
+    justify-content: flex-start;
+  }
+
+  .quiz-pregunta {
+    font-size: clamp(1.15rem, 5vw, 1.3rem);
+    line-height: 1.4;
+  }
+
+  /* Alternativas: tarjetas que crecen con su texto, sin relleno de sobra */
+  .answer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .flip-card {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  .flip-card-inner {
+    min-height: 0;
+  }
+
+  .flip-card-front {
+    position: relative;
+    inset: auto;
+    height: 100%;
+    min-height: 3.6rem;
+    padding: 0.65rem 0.9rem;
+    gap: 0.75rem;
+  }
+
+  .flip-card-back {
+    padding: 0.65rem 0.9rem;
+  }
+
+  .tile-letra {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.95rem;
+  }
+
+  .tile-texto {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* Botones de navegación: dos botones iguales, solo con icono, en los extremos y alineados con las tarjetas.
+     Usan la misma esquina que las tarjetas de cada estilo. El texto sigue ahí para lectores de pantalla (aria-label). */
+  .quiz-siguiente-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 0;
+    margin-top: 0.2rem;
+  }
+
+  .siguiente-btn,
+  .anterior-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 4.5rem;
+    height: 3rem;
+    min-width: 0;
+    padding: 0;
+    border-radius: var(--card-radius, 14px);
+  }
+
+  .nav-flecha,
+  .nav-texto {
+    display: none;
+  }
+
+  .nav-icono {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* En la primera pregunta se reserva el lugar de «anterior» (invisible) para que «siguiente» no cambie de sitio */
+  .anterior-btn.is-vacio {
+    display: flex;
+    visibility: hidden;
+  }
+
+  /* Pantalla de sesión: los dos botones del mismo tamaño */
+  .sesion-botones {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .momento-btn {
+    min-width: 0;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Botón de pantalla completa: pequeño y arriba a la derecha, para que no tape nada */
+  #btn-fullscreen {
+    top: 10px;
+    right: 10px;
+    bottom: auto;
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+
+/* ================================================================
+   Portada del curso en celular (hasta 720 px): tarjetas más compactas, el mismo diseño con menos relleno.
+   ================================================================ */
+@media (max-width: 720px) {
+  .session-grid {
+    gap: 0.55rem;
+  }
+
+  .session-card {
+    padding: 0.7rem 1rem;
+    gap: 0.1rem;
+  }
+
+  .session-card-num {
+    font-size: 0.8rem;
+  }
+
+  .session-card-tema {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .hito-card {
+    padding: 0.7rem 1rem;
+    gap: 0.1rem;
+  }
 }
